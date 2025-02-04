@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:newsapp/model/news_response.dart';
 
@@ -22,9 +23,15 @@ class NewsItemWidget extends StatelessWidget {
        [
          ClipRRect(
            borderRadius: BorderRadius.circular(10),
-           child: Image.network(article.urlToImage 
-                               ?? "https://cdn.vox-cdn.com/thumbor/wPO2usOSxctI84haZv11M8ErP_0=/0x0:2040x1360/1200x628/filters:focal(1020x680:1021x681)/cdn.vox-cdn.com/uploads/chorus_asset/file/23587767/acastro_220524_STK428_0003.jpg", 
-                               ),
+           child: 
+          //  Image.network(article.urlToImage 
+          //                      ?? "https://cdn.vox-cdn.com/thumbor/wPO2usOSxctI84haZv11M8ErP_0=/0x0:2040x1360/1200x628/filters:focal(1020x680:1021x681)/cdn.vox-cdn.com/uploads/chorus_asset/file/23587767/acastro_220524_STK428_0003.jpg", 
+          //                      ),
+          CachedNetworkImage(
+                      imageUrl: article.urlToImage ?? "https://a.fsdn.com/sd/topics/ai_64.png",
+                      placeholder: (context, url) => Center(child: CircularProgressIndicator()),
+                      errorWidget: (context, url, error) => Center(child: Icon(Icons.error)),
+                  ),
          ),
        SizedBox(height: 10,),
         Text(article.source?.name ?? "", 

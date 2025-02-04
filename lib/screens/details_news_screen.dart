@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:newsapp/model/news_response.dart';
 import 'package:newsapp/screens/web_view_screen.dart';

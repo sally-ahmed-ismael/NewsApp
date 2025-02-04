@@ -1,7 +1,5 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:newsapp/api/api.dart';
-import 'package:newsapp/model/news_response.dart';
 import 'package:newsapp/model/source_response.dart';
 import 'package:newsapp/screens/details_news_screen.dart';
 import 'package:newsapp/widget/news_item_widget.dart';
